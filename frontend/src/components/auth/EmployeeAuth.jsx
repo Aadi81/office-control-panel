@@ -151,7 +151,7 @@ function EmployeeAuth({ onBack }) {
               <input 
                 name="monthOfJoining" 
                 type="text" 
-                placeholder="Month of Joining (e.g., December)" 
+                placeholder="Year and Month of Joining (e.g., 2014, December)" 
                 required 
                 className="input-field" 
                 onChange={handleChange} 
