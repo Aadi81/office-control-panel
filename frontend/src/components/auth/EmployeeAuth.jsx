@@ -22,8 +22,8 @@ function EmployeeAuth({ onBack }) {
 
   // ✅ NEW: TIPL ID Validation Function
   const validateTIPLId = (tiplId) => {
-    // Format: TIPLXXX where XXX is 001-999
-    const tiplPattern = /^TIPL(0[0-9]{2}|[1-9][0-9]{2})$/;
+    // Format: TIPL20XXXXX where XXXXX is 14001-99999
+    const tiplPattern = /^TIPL[0-9]{7}$/;
     return tiplPattern.test(tiplId);
   };
 
@@ -35,7 +35,7 @@ function EmployeeAuth({ onBack }) {
     try {
       // ✅ NEW: Validate TIPL ID before submission
       if (isSignUp && !validateTIPLId(formData.tiplId)) {
-        setError('Invalid Company ID! Format must be TIPLXXX (e.g., TIPL001, TIPL099, TIPL999). Only authorized employees with valid IDs can register.');
+        setError('Invalid Company ID!');
         setLoading(false);
         return;
       }
